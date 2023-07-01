@@ -1,0 +1,59 @@
+@use '../abstracts' as *;
+
+.section-a {
+  background-color: $bg-clr;
+  padding-top: $padding-top;
+
+  .card {
+    margin-bottom: 2.5rem;
+    text-align: center;
+    background-color: $white;
+    transition: box-shadow 0.4s ease;
+  }
+
+  .s-img {
+    overflow: hidden;
+
+    img {
+      transition: transform 0.4s ease;
+    }
+  }
+
+  .card-content {
+    padding: 1.5rem 0 2rem;
+    line-height: 1.4;
+
+    .room-name {
+      text-transform: uppercase;
+      color: $black;
+      font-size: 1.1rem;
+    }
+
+    p {
+      color: $cardp-clr;
+      font-size: $font-sz-200;
+    }
+  }
+
+  //HOVER STATES
+  .card:hover img {
+    transform: scale(1.1);
+  }
+
+  .card:hover {
+    box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  //MEDIA QUERY
+  @include medium {
+    .grid {
+      @include grid(repeat(2, 1fr), 2rem);
+    }
+  }
+
+  @include large {
+    .grid {
+      @include grid(repeat(3, 1fr), 2rem);
+    }
+  }
+}

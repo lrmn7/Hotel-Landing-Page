@@ -1,0 +1,45 @@
+@use '../abstracts' as *;
+
+.section-c {
+  padding: $padding-top 0;
+  text-align: center;
+
+  h2 {
+    text-align: left;
+  }
+
+  .grid {
+    @include grid(repeat(2, 1fr), 2rem);
+  }
+
+  @include medium {
+    padding-top: 6rem;
+  }
+
+  .row {
+    margin-bottom: 4rem;
+  }
+
+  img {
+    width: 72px;
+    margin: 0 auto 1rem;
+  }
+
+  h3 {
+    font-size: $font-sz-300;
+  }
+
+  //MEDIA QUERY
+  @include medium {
+    .grid {
+      @include grid(repeat(3, 1fr), 2rem);
+    }
+  }
+
+  //MEDIA QUERY
+  @include large {
+    .grid {
+      @include grid(repeat(4, 1fr), 2rem);
+    }
+  }
+}

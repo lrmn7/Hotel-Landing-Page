@@ -1,0 +1,55 @@
+@use '../abstracts' as *;
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 500;
+  width: 100%;
+  transition: all 0.3s ease;
+
+  .content {
+    position: relative;
+    padding: 1rem;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .d-flex {
+    @include flex(center, space-between);
+    position: relative;
+  }
+
+  &.showBg {
+    background-color: $white;
+    box-shadow: 0 10px 20px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  @include medium {
+    &.showBg .nav a {
+      color: rgba(0, 0, 0, 0.6);
+
+      &:hover {
+        color: $primary-clr;
+      }
+    }
+  }
+
+  &.showBg .nav .active {
+    color: $primary-clr;
+  }
+}
+
+// LOGO
+.logo {
+  a {
+    color: $white;
+    font-family: $primary-font;
+    font-size: 1.5rem;
+
+    &.color {
+      color: $black;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@use '../abstracts' as *;
+
+.form {
+  padding: 4rem 0;
+
+  label {
+    text-transform: capitalize;
+    font-size: $font-sz-200;
+    font-weight: 700;
+    color: $paragrapgy-clr;
+  }
+
+  .row {
+    margin-bottom: 1.5rem;
+  }
+
+  textarea,
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'] {
+    width: 100%;
+    border-radius: 0.2rem;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+    outline-color: $primary-clr;
+    border: 1px solid #ced4da;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'] {
+    height: 40px;
+  }
+
+  textarea {
+    padding-top: 0.5rem;
+  }
+
+  ::placeholder {
+    font-family: $primary-font;
+  }
+
+  .btn {
+    color: $white;
+    outline: none;
+    border: none;
+    font-family: $primary-font;
+    cursor: pointer;
+    text-transform: capitalize;
+    background-color: $primary-clr;
+    padding: 0.7rem 1.5rem;
+    margin-top: 1rem;
+    border-radius: 4rem;
+    transition: box-shadow 0.4s ease-in-out;
+
+    &:hover {
+      box-shadow: -1px 4px 10px rgba(0, 0, 0, 0.6);
+    }
+  }
+}

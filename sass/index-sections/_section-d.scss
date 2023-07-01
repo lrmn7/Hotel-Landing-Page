@@ -1,0 +1,76 @@
+@use '../abstracts' as *;
+
+.section-d {
+  padding: 2rem 0;
+  color: $white;
+  background: $black url('../../img/slider-3.jpg');
+  @include image-property(fixed);
+  position: relative;
+  z-index: 11;
+
+  &::after {
+    content: '';
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    transition: background-color 0.3s ease-in-out;
+    z-index: -1;
+  }
+
+  .promo {
+    h3 {
+      font-size: 1.7rem;
+      text-transform: capitalize;
+      margin-bottom: 0.5rem;
+
+      @include medium {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .cta {
+      color: $white;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      margin-bottom: 0.5rem;
+      font-size: $font-sz-200;
+      transition: background-color 0.3s ease-in;
+
+      &:hover {
+        background-color: $primary-clr;
+      }
+    }
+  }
+
+  .duration {
+    span {
+      text-transform: uppercase;
+      font-size: $font-sz-100;
+      letter-spacing: 2px;
+      margin-bottom: 1.5rem;
+    }
+
+    h4 {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .d-flex {
+      @include flex(center, space-between);
+      flex-wrap: wrap;
+      text-align: center;
+    }
+  }
+
+  //MEDIA QUERY
+  @include medium {
+    .grid {
+      @include grid(repeat(2, 1fr), 2rem);
+      padding: 3rem 0;
+    }
+  }
+}

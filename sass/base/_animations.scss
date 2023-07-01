@@ -1,0 +1,25 @@
+@use '../layouts' as *;
+@use '../abstracts' as *;
+
+// to top arrow
+@keyframes goTop {
+  from {
+    transform: translateY(-30px);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+// FADE IN CARDS
+.fade-in {
+  transform: translateY(-40px);
+  opacity: 0;
+}
+
+.fade-in.appear {
+  transform: translateY(0);
+  opacity: 1;
+  transition: opacity 0.7s ease-in, transform 0.7s ease-in;
+}

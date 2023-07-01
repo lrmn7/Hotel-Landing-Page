@@ -1,0 +1,32 @@
+@use '../abstracts' as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a,
+span {
+  display: inline-block;
+  text-decoration: none;
+}
+
+body.fixed {
+  overflow: hidden;
+  width: 100%;
+}

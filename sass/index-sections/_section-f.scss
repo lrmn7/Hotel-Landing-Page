@@ -1,0 +1,70 @@
+@use '../abstracts' as *;
+
+.section-f {
+  padding-top: $padding-top;
+
+  p {
+    color: $paragrapgy-clr;
+    font-size: $font-sz-200;
+  }
+
+  .card {
+    margin-bottom: 3rem;
+  }
+
+  .title {
+    padding: 1rem 0;
+
+    .sub-head {
+      text-transform: capitalize;
+      color: $black;
+    }
+
+    p {
+      text-transform: capitalize;
+    }
+
+    .d-flex {
+      @include flex(center, flex-start);
+    }
+
+    .date {
+      margin-right: 1rem;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0.6rem;
+        right: -0.7rem;
+        background-color: $paragrapgy-clr;
+        height: 4px;
+        width: 4px;
+        border-radius: 50%;
+      }
+    }
+
+    .admin {
+      position: relative;
+      color: $primary-clr;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+
+  //MEDIA QUERY
+  @include medium {
+    .grid {
+      @include grid(repeat(2, 1fr), 2rem);
+    }
+  }
+
+  @include large {
+    .grid {
+      @include grid(repeat(3, 1fr), 2rem);
+    }
+  }
+}

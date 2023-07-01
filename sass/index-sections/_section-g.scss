@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+
+.section-g {
+  background-color: $bg-clr;
+  padding: $padding-top 0;
+
+  h2 {
+    margin-bottom: 3rem;
+  }
+
+  img {
+    width: 79px;
+    border-radius: 0.4rem;
+    margin-right: 1rem;
+  }
+
+  .card {
+    margin-bottom: 3rem;
+  }
+
+  .d-flex {
+    @include flex(flex-start, flex-start);
+  }
+
+  .content {
+    h3 {
+      text-transform: capitalize;
+      margin-bottom: 0.3rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: $paragrapgy-clr;
+      font-size: $font-sz-200;
+    }
+  }
+
+  //MEDIA QUERY
+  @include medium {
+    .grid {
+      @include grid(repeat(2, 1fr), 2rem);
+    }
+  }
+}

@@ -1,0 +1,114 @@
+@use '../abstracts' as *;
+
+#footer-section {
+  background-color: $footer-bgclr;
+  padding: 3rem 0 2rem;
+  position: relative;
+
+  a,
+  p {
+    font-size: $font-sz-200;
+  }
+
+  a {
+    text-transform: capitalize;
+    color: $footerA-clr;
+  }
+
+  p {
+    color: $footerP-clr;
+  }
+
+  h3 {
+    color: $white;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+  }
+
+  .m-b {
+    margin-bottom: 2rem;
+  }
+
+  .about {
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      color: $white;
+      padding: 0.4rem 1.5rem;
+      border-radius: 4rem;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: $primary-clr;
+        color: $white;
+      }
+    }
+  }
+
+  .menu--links,
+  .social-links,
+  .copyright {
+    a {
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
+  .menu--links {
+    @include medium {
+      margin-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.6rem;
+    }
+  }
+
+  .social-links {
+    a {
+      margin-right: 1rem;
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    padding: 3rem 0;
+  }
+
+  .page-up {
+    a {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background-color: $black;
+      color: $white;
+      opacity: 0;
+      visibility: hidden;
+      padding: 0.3rem 0.9rem;
+      border-radius: 0.3rem;
+      transition: opacity 0.2s ease-in, background-color 0.2s ease-in;
+
+      &.showArrow {
+        animation: goTop 0.5s linear;
+        opacity: 0.5;
+        visibility: visible;
+      }
+
+      &:hover {
+        background-color: $primary-clr;
+        opacity: 1;
+      }
+    }
+  }
+
+  //MEDIA QUERY
+  @include medium {
+    .grid {
+      @include grid(repeat(4, 1fr), 2rem);
+    }
+  }
+}

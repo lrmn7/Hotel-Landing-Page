@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+body {
+  background-color: $bg-clr;
+  font-family: $primary-font;
+  line-height: 1.6;
+}
+
+.container {
+  padding: 0rem 0.938rem;
+
+  @include landscape {
+    width: 576px;
+    margin: 0 auto;
+  }
+
+  @include medium {
+    width: 760px;
+    margin: 0 auto;
+  }
+
+  @include large {
+    width: 960px;
+  }
+
+  @include extra-large {
+    width: 1100px;
+  }
+}

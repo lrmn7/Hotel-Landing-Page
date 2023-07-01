@@ -1,0 +1,110 @@
+@use '../abstracts' as *;
+
+.toggle-menu {
+  color: $white;
+  font-size: $font-sz-400;
+  cursor: pointer;
+  z-index: 100;
+
+  &.colorBlack {
+    color: $black;
+  }
+
+  @include medium {
+    display: none;
+  }
+}
+
+.colorWhite {
+  color: $white;
+}
+
+//add close icon
+.toggle-menu i.showMenu::before {
+  content: '\f00d';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: $font-sz-400;
+}
+
+//NAV MENU
+.nav {
+  @include flex(center, flex-end);
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  z-index: 10;
+  width: 100%;
+  transform: translateX(500px);
+  transition: transform 0.5s ease-in-out;
+
+  // MEDIA QUERY
+  @include medium {
+    position: static;
+    transform: unset;
+  }
+
+  // show menu
+  &.showMenu {
+    transform: translateX(0);
+  }
+}
+
+.menu {
+  background-color: $nav-clr;
+  height: 100vh;
+  padding: 10rem 10rem 7rem 2.5rem;
+  text-align: left;
+
+  // MEDIA QUERY
+  @include medium {
+    background-color: transparent;
+    padding: 0;
+    @include flex(center, flex-end);
+    height: unset;
+  }
+
+  li {
+    margin-bottom: 1.2rem;
+    text-transform: capitalize;
+
+    @include medium {
+      margin-bottom: 0;
+      margin-left: 2rem;
+      justify-self: flex-end;
+    }
+
+    @include large {
+      margin-left: 3rem;
+    }
+  }
+
+  a {
+    color: $white;
+    font-size: $font-sz-350;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: $primary-clr;
+
+      @include medium {
+        color: $white;
+      }
+    }
+
+    @include medium {
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      font-size: $font-sz-200;
+      font-weight: 500;
+    }
+
+    &.active {
+      color: $primary-clr;
+
+      @include medium {
+        color: $white;
+      }
+    }
+  }
+}

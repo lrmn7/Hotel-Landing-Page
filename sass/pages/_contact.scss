@@ -1,0 +1,56 @@
+@use '../abstracts' as *;
+
+#contact-section {
+  .contact-info {
+    padding: 4rem 0;
+
+    @include medium {
+      padding-top: 5rem;
+    }
+
+    h5,
+    h3 {
+      text-transform: capitalize;
+    }
+
+    h5,
+    p {
+      color: $paragrapgy-clr;
+    }
+
+    h5,
+    p,
+    a {
+      font-size: $font-sz-200;
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+
+    .m-b {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: $primary-clr;
+    }
+  }
+
+  //MEDIA QUERY
+  @include medium {
+    .grid {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+
+  @include large {
+    .grid {
+      @include grid(repeat(2, 1fr), 2rem);
+    }
+    .contact-info {
+      margin-left: 5rem;
+    }
+  }
+}

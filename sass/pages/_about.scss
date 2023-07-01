@@ -1,0 +1,85 @@
+@use '../abstracts' as *;
+
+.hotel-staff-section {
+  background-color: $bg-clr;
+  padding: 3rem 0 4rem;
+
+  .card {
+    margin-bottom: 3rem;
+    text-align: center;
+    background-color: $white;
+    transition: box-shadow 0.4s ease;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+
+    a {
+      color: $black;
+    }
+  }
+
+  .s-img {
+    overflow: hidden;
+
+    img {
+      transition: transform 0.4s ease;
+    }
+  }
+
+  .card-content {
+    padding: 2rem 1.5rem;
+    line-height: 1.4;
+
+    .room-name {
+      text-transform: uppercase;
+      color: $black;
+      font-size: 1.1rem;
+    }
+
+    p {
+      color: $paragrapgy-clr;
+      font-size: $font-sz-200;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .btn {
+    text-transform: capitalize;
+    border: none;
+    color: $primary-clr;
+
+    span {
+      margin-right: 0.5rem;
+    }
+  }
+
+  //HOVER STATES
+  .card:hover img {
+    transform: scale(1.1);
+  }
+
+  .card:hover {
+    box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  //MEDIA QUERY
+  @include medium {
+    .grid {
+      @include grid(repeat(2, 1fr), 2rem);
+    }
+  }
+
+  @include large {
+    .grid {
+      @include grid(repeat(3, 1fr), 2rem);
+    }
+  }
+}
+
+.about-gallery {
+  padding-top: 0;
+  margin-bottom: 7rem;
+}
